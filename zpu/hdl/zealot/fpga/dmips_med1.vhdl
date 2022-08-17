@@ -62,19 +62,19 @@ entity DMIPS_Med1 is
       rs232_tx_o : out std_logic;  -- UART Tx
       rs232_rx_i : in  std_logic); -- UART Rx
 
-   constant BRD_PB1_I      : string:="D19";  -- SWITCH8==S2
-   constant BRD_CLK1_I     : string:="AA12"; -- 50 MHz clock
+   constant BRD_PB1_I      : string:="L3";  -- SWITCH8==S2
+   constant BRD_CLK1_I     : string:="T8"; -- 50 MHz clock
    --constant BRD_CLK1_I     : string:="AB12"; -- 40 MHz clock
    -- UART: direct 1:1 cable
-   constant BRD_TX_O       : string:="L4"; -- UART 1 (J1) TXD1 DB9 pin 2
-   constant BRD_RX_I       : string:="L3"; -- UART 1 (J1) RXD1 DB9 pin 3
+   constant BRD_TX_O       : string:="D12"; -- UART 1 (J1) TXD1 DB9 pin 2
+   constant BRD_RX_I       : string:="C11"; -- UART 1 (J1) RXD1 DB9 pin 3
 
    ------------
    -- Pinout --
    ------------
    attribute LOC        : string;
    attribute IOSTANDARD : string;
-   constant  IOSTD      : string:="LVTTL";
+   constant  IOSTD      : string:="LVCMOS33";
 
    attribute LOC        of rst_i       : signal is BRD_PB1_I;
    attribute IOSTANDARD of rst_i       : signal is IOSTD;
