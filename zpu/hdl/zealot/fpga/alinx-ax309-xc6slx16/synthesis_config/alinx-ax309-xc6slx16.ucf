@@ -1,0 +1,85 @@
+############################################################
+# ALINX AX309 clone OMDAZZ Board Constraints File
+#
+# Family:  Spartan6
+# Device:  XC6SLX16
+# Package: FTG256
+# Speed:   -2
+#
+
+
+############################################################
+## clock/timing constraints
+############################################################
+
+NET "clk_50" LOC = T8 | TNM_NET = sys_clk_pin;
+TIMESPEC TS_sys_clk_pin = PERIOD sys_clk_pin 50000 kHz;
+
+
+############################################################
+## pin placement constraints
+############################################################
+
+NET reset_n             LOC = L3; ## reset pushbutton
+
+
+# RS232
+NET rs232_rx            LOC = C11;	## Uart RXD:U4_TXD
+NET rs232_tx            LOC = D12; 	## Uart TXD:U4_RXD
+
+
+# VGA output (2**9 = 512 colors)
+NET vga_red<7>              LOC = M13;        ## VGA R4
+NET vga_red<6>              LOC = N14;        ## VGA R3
+NET vga_red<5>              LOC = L12;        ## VGA R2
+NET vga_red<4>              LOC = M12;        ## VGA R1
+NET vga_red<3>              LOC = M11;        ## VGA R0
+NET vga_green<7>            LOC = P11;        ## VGA G4
+NET vga_green<6>            LOC = M10;        ## VGA G4
+NET vga_green<5>            LOC = L10;        ## VGA G3
+NET vga_green<4>            LOC = P9;         ## VGA G2
+NET vga_green<3>            LOC = N9;         ## VGA G1
+NET vga_green<2>            LOC = M9;         ## VGA G0
+NET vga_blue<7>             LOC = L7;         ## VGA B4
+NET vga_blue<6>             LOC = N8;         ## VGA B3
+NET vga_blue<5>             LOC = P8;         ## VGA B2
+NET vga_blue<4>             LOC = M7;         ## VGA B1
+NET vga_blue<3>             LOC = P7;         ## VGA B0
+
+NET vga_vsync               LOC = L13;        ## VGA VS
+NET vga_hsync               LOC = M14;        ## VGA HS
+
+
+# GPIO push buttons, low active
+NET button_n<0>             LOC = C3;       ## KEY1
+NET button_n<1>             LOC = D3;       ## KEY2
+NET button_n<2>             LOC = E4;       ## KEY3
+NET button_n<3>             LOC = E3;       ## KEY4
+
+
+# GPIO LEDs
+NET led<0>                LOC = P4;       ## LED1
+NET led<1>                LOC = N5;       ## LED2
+NET led<2>                LOC = P5;       ## LED3
+NET led<3>                LOC = M6;       ## LED4
+
+# seven segment display (5=left 0=right)
+#
+# segment assignment:
+# .ABCDEFG
+# 76543210
+NET dig0_seg<0>     LOC = C7;          ##
+NET dig0_seg<1>     LOC = E6;          ##
+NET dig0_seg<2>     LOC = C5;          ##
+NET dig0_seg<3>     LOC = F7;          ##
+NET dig0_seg<4>     LOC = D6;          ##
+NET dig0_seg<5>     LOC = E7;          ##
+NET dig0_seg<6>     LOC = D5;          ##
+NET dig0_seg<7>     LOC = C6;          ##
+
+NET Scan_Sig<1>     LOC = E8;          ##
+NET Scan_Sig<0>     LOC = D8;          ##
+
+# Header A (left)
+
+# pins used for voltage termination
