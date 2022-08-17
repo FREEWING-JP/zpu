@@ -46,7 +46,7 @@
 library IEEE;
 use IEEE.std_logic_1164.all;
 library zpu;
-use zpu.UART.all;
+use work.UART.all;
 
 entity TxUnit is
   port (

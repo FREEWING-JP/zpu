@@ -48,8 +48,8 @@ use IEEE.std_logic_1164.all;
 use IEEE.numeric_std.all;
 
 library zpu;
-use zpu.zpupkg.all;
-use zpu.txt_util.all;
+use work.zpupkg.all;
+use work.txt_util.all;
 
 library work;
 use work.zpu_memory.all;

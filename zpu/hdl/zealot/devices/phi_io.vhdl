@@ -56,10 +56,10 @@ use IEEE.numeric_std.all;
 use std.textio.all;
 
 library zpu;
-use zpu.zpupkg.timer;
-use zpu.zpupkg.gpio;
-use zpu.UART.all;
-use zpu.txt_util.all;
+use work.zpupkg.timer;
+use work.zpupkg.gpio;
+use work.UART.all;
+use work.txt_util.all;
  
 entity ZPUPhiIO is
    generic(

@@ -46,7 +46,7 @@ use IEEE.std_logic_1164.all;
 use IEEE.numeric_std.all;
 
 library zpu;
-use zpu.zpupkg.all;
+use work.zpupkg.all;
 
 entity DMIPS_Med1 is
    generic(

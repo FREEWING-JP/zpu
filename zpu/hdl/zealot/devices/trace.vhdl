@@ -52,8 +52,8 @@ use IEEE.numeric_std.all;
 use std.textio.all;
 
 library zpu;
-use zpu.zpupkg.all;
-use zpu.txt_util.all;
+use work.zpupkg.all;
+use work.txt_util.all;
 
 entity Trace is
    generic(
